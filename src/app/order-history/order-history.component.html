@@ -1,0 +1,48 @@
+<div class="like-product ptb-95 ptb-sm-55 off-white-bg">
+    <div class="container">
+        <div class="like-product-area">
+            <h2 class="section-ttitle2 mb-30">All Orders</h2>
+            <div class="row">
+                <table>
+                    <tr>
+                        <th>OrderId</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Cusromer Email</th>
+                        <th>Item</th>
+                    </tr>
+
+                    <tr *ngFor="let order of getAllOrdersAr">
+
+
+                        <td>{{order.orderId}} </td>
+                        <td>{{order.amount}}</td>
+                        <td>{{order.date}}</td>
+                        <td>{{order.customer.email}}</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Item ID</th>
+                                    <th>Name</th>
+                                    <th>Amount</th>
+                                    <th>QTY</th>
+                                </tr>
+                                <tr *ngFor="let orderD of order.orderDetail">
+                                    <td>{{orderD.product.id}}</td>
+                                    <td>{{orderD.product.name}}</td>
+                                    <td>{{orderD.product.unitPrice}}</td>
+                                    <td>{{orderD.qty}}</td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
