@@ -5,26 +5,26 @@
             <h2 class="section-ttitle2 mb-30">Total Aount - Rs.{{totalAmout}} </h2>
             <div class="row">
                 <div class="col-md-4" *ngFor="let data of itemCartAr; let i = index;">
-                    <div  >
-                        <div  class="single-product">
+                    <div>
+                        <div class="single-product">
                             <div class="pro-img">
-                                <a >
+                                <a>
                                     <img class="primary-img" src='{{data.imgPath}}' alt="single-product">
-<!--                                    <img class="secondary-img" src="./assets/img/products/18.jpg" alt="single-product">-->
+                                    <!--                                    <img class="secondary-img" src="./assets/img/products/18.jpg" alt="single-product">-->
                                 </a>
-<!--                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>-->
+                                <!--                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>-->
                             </div>
                             <div class="pro-content">
                                 <div class="pro-info">
-                                    <h4><a >Product - {{data.name}}</a></h4>
-                                    <h4><a >Price - Rs.{{data.unitPrice}}</a></h4>
-                                    <h4><a >Item Count - {{data.qty}}</a></h4>
+                                    <h4><a>Product - {{data.name}}</a></h4>
+                                    <h4><a>Price - Rs.{{data.unitPrice}}</a></h4>
+                                    <h4><a>Item Count - {{data.qty}}</a></h4>
                                 </div>
                                 <div class="pro-actions">
                                     <div class="pro-info">
-                                        <h4><a >Product - {{data.name}}</a></h4>
-                                        <h4><a >Price - Rs{{data.unitPrice}}</a></h4>
-                                        <h4><a >Item Count - {{data.qty}}</a></h4>
+                                        <h4><a>Product - {{data.name}}</a></h4>
+                                        <h4><a>Price - Rs{{data.unitPrice}}</a></h4>
+                                        <h4><a>Item Count - {{data.qty}}</a></h4>
                                     </div>
                                 </div>
                             </div>
@@ -32,12 +32,40 @@
                     </div>
                 </div>
             </div>
+
+            <div *ngIf="showDetails" class="container">
+                <div class="col-lg-8" style="padding-left: 19%;margin-top: 86px">
+                    <form>
+                        <div style="padding: 20px">
+                            <h3>Billing Address </h3>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" id="addressLine1" [(ngModal)]="userDetailsDto.addressLine1" [value]="userDetailsDto.addressLine1" class="form-control"/>
+                            <label class="form-label">Address Line 1</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" id="addressLine2" [(ngModal)]="userDetailsDto.addressLine2" [value]="userDetailsDto.addressLine2" class="form-control"/>
+                            <label class="form-label">Address Line 2</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" id="addressLine3" [(ngModal)]="userDetailsDto.addressLine3" [value]="userDetailsDto.addressLine3" class="form-control"/>
+                            <label class="form-label">Address Line 3</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="email" id="mobile" [(ngModal)]="userDetailsDto.mobile" [value]="userDetailsDto.mobile" class="form-control"/>
+                            <label class="form-label">Phone</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
             <div class="actions-primary" *ngIf="itemCartAr.length > 0">
-                <a (click)="pleaseOrder()" >Place Order</a>
+                <a (click)="pleaseOrder()">Place Order</a>
             </div>
             <div *ngIf="!(itemCartAr.length > 0)">
-            <h4 >Cart is empty</h4>
+                <h4>Cart is empty</h4>
             </div>
         </div>
+
     </div>
 </div>

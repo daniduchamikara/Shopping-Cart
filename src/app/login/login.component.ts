@@ -33,6 +33,11 @@ export class LoginComponent implements OnInit {
                 if (res && res.userId) {
                     sessionStorage.setItem('happyKidUserId', res.userId);
                     sessionStorage.setItem('happyKidUsername', res.username);
+                    sessionStorage.setItem('happyKidAddress1', res.addressLine1);
+                    sessionStorage.setItem('happyKidAddress2', res.addressLine2);
+                    sessionStorage.setItem('happyKidAddress3', res.addressLine3);
+                    sessionStorage.setItem('happyKidMobile', res.mobile);
+                    sessionStorage.setItem('happyKidEmail', res.email);
                     this._router.navigateByUrl('/shop');
                 } else {
                     Swal.fire('Error!', 'Invalid email or password');
