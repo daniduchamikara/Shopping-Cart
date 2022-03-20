@@ -16,6 +16,7 @@ import { ItemCartComponent } from './item-cart/item-cart.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import {LoginComponent} from './login/login.component';
 import { UserDetailsComponent } from './item-cart/user-details/user-details.component';
+import { RegisterUserComponent } from './login/register-user/register-user.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UserDetailsComponent } from './item-cart/user-details/user-details.comp
     ItemCartComponent,
     OrderHistoryComponent,
     LoginComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    RegisterUserComponent
   ],
   imports: [
     BrowserModule,

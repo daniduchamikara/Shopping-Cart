@@ -1,7 +1,7 @@
 import {CONFIGURATIONS} from './api-config';
 import {ENDPOINTS} from './api-endpoints';
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from "rxjs";
 
 @Injectable()
@@ -18,6 +18,11 @@ export class ApiService {
 
     getProductList() {
         let url = CONFIGURATIONS.appRoot + ENDPOINTS.getProductList;
+        return this.httpClient.get(url);
+    }
+
+    getCatList() {
+        let url = CONFIGURATIONS.appRoot + ENDPOINTS.getProductCatList;
         return this.httpClient.get(url);
     }
 
@@ -60,5 +65,18 @@ export class ApiService {
         const url = CONFIGURATIONS.appRoot + ENDPOINTS.login;
         return this.httpClient.post<any>(url, data);
 
+    }
+
+    createUser(data): Observable<any> {
+        const url = CONFIGURATIONS.appRoot + ENDPOINTS.userCreate;
+        return this.httpClient.post<any>(url, data);
+    }
+
+    searchCat(inputVal: string, selectVal): Observable<any> {
+        const params = new HttpParams()
+            .set('inputVal', inputVal)
+            .set('selectVal', selectVal);
+        const url = CONFIGURATIONS.appRoot + ENDPOINTS.searchData;
+        return this.httpClient.post<any>(url, {params});
     }
 }

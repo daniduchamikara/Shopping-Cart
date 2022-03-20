@@ -1,6 +1,7 @@
 export const ENDPOINTS = {
   getCategoryList: '/cart/category-list',
   getProductList: '/product/product-list',
+  getProductCatList: '/product/get-all-cat',
   getProductsByCategory: '/product/products-by-category/{categoryId}',
   getProductDetail: '/product/get-product-detail/{productId}',
   getCustomerCart: '/cart/get-customer-cart/{customerId}',
@@ -10,4 +11,6 @@ export const ENDPOINTS = {
   deleteCartItem: '/cart/delete-cart-item/{cartId}',
   placeOrder: '/Order/place-order',
   getAllOrders: '/Order/get-all-orders',
+  userCreate: '/customer/register-user',
+  searchData: '/customer/search-data',
 };
