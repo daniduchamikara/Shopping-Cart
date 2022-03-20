@@ -60,13 +60,13 @@
                         <div class="categorie-search-box">
                             <!--                             <form action="#">-->
                             <div class="form-group">
-                                <select name="selectedQuantity" id="aantal" class="form-control" (change)="onChange($event)">
-                                    <option value="0">--Select Category --</option>
+                                <select name="selectedQuantity" id="aantal" class="form-control" [(ngModel)]="selectVal" (change)="onChange($event)">
+                                    <option value="0">--Select--</option>
                                     <option *ngFor="let option of catList" [value]="option.id" >{{option.title}}</option>
                                 </select>
                             </div>
-                            <input type="text" name="search" placeholder="I’m shopping for...">
-                            <button><i class="lnr lnr-magnifier"></i></button>
+                            <input type="text" name="search" [(ngModal)]="searchVal" placeholder="I’m shopping for...">
+                            <button (click)="searchCategory()"><i class="lnr lnr-magnifier"></i></button>
                             <!--                             </form>-->
                         </div>
                     </div>

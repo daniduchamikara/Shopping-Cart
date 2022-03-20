@@ -12,5 +12,5 @@ export const ENDPOINTS = {
   placeOrder: '/Order/place-order',
   getAllOrders: '/Order/get-all-orders',
   userCreate: '/customer/register-user',
-  searchData: '/customer/search-data',
+    searchData: '/product/search-data',
 };

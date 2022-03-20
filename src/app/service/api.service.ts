@@ -72,11 +72,14 @@ export class ApiService {
         return this.httpClient.post<any>(url, data);
     }
 
-    searchCat(inputVal: string, selectVal): Observable<any> {
-        const params = new HttpParams()
-            .set('inputVal', inputVal)
-            .set('selectVal', selectVal);
+    searchCat(searchVal: string, selectVal: string): Observable<any> {
+        const httpParams = new HttpParams({
+            fromObject: {
+                searchVal,
+                selectVal
+            }
+        });
         const url = CONFIGURATIONS.appRoot + ENDPOINTS.searchData;
-        return this.httpClient.post<any>(url, {params});
+        return this.httpClient.post<any>(url, null, {params: httpParams});
     }
 }
